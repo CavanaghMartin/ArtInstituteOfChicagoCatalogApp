@@ -10,8 +10,8 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {RootStackParamList} from './types';
-import {Home, Details, Favs} from './screens';
-import {store} from './store/store';
+import {Home, Details, Favs} from './src/screens';
+import {store} from './src/store/store';
 import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
 import {persistStore} from 'redux-persist';
@@ -49,7 +49,7 @@ function App(): React.JSX.Element {
   return (
     <Provider store={store}>
       <PersistGate persistor={persisitor}>
-        <NavigationContainer>
+        <NavigationContainer >
           <Tab.Navigator
             screenOptions={({route}) => ({
               headerShown: false,
@@ -68,6 +68,7 @@ function App(): React.JSX.Element {
               tabBarActiveTintColor: 'red',
               tabBarInactiveTintColor: 'gray',
               tabBarSwipeEnabled: false,
+              tabBarShowLabel: false,
             })}>
             <Tab.Screen name="Home" component={HomeStack} />
             <Tab.Screen name="Favorites" component={FavsStack} />

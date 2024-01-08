@@ -12,10 +12,10 @@ import {
 } from 'react-native';
 import axios from 'axios';
 import {useRoute, RouteProp} from '@react-navigation/native';
-import {RootStackParamList} from '../types';
+import {RootStackParamList} from '../../types';
 import HTML from 'react-native-render-html';
-import Header from '../components/header';
-import FloatingHeartButton from '../components/favButton';
+import Header from '../components/Header';
+import FloatingHeartButton from '../components/Button';
 
 const Details: React.FC = () => {
   type RouteParams = {

@@ -3,7 +3,7 @@ import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 import {useNavigation} from '@react-navigation/native';
-import {RootStackProps} from '../types';
+import {RootStackProps} from '../../types';
 
 type MyComponentProps = {
   title: string;
@@ -35,7 +35,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 16,
     borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
+    borderBottomColor: 'lightgrey',
+    backgroundColor: 'white',
   },
   title: {
     flex: 1,

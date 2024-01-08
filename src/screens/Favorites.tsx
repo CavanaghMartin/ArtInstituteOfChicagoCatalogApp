@@ -1,10 +1,10 @@
 import React from 'react';
 import {View, StyleSheet, FlatList, Pressable} from 'react-native';
-import Header from '../components/header';
+import Header from '../components/Header';
 import {useAppSelector} from '../store/store';
-import ArtList from '../components/artList';
+import ArtList from '../components/ArtList';
 import {useNavigation} from '@react-navigation/native';
-import {RootStackProps} from '../types';
+import {RootStackProps} from '../../types';
 
 const Favs: React.FC = () => {
   interface ArtWork {
@@ -47,6 +47,7 @@ const Favs: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor:'white'
   },
   text: {
     fontSize: 100,

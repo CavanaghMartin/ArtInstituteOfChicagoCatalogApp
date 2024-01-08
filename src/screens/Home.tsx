@@ -1,11 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect, useState} from 'react';
-import {FlatList, ActivityIndicator, Pressable} from 'react-native';
+import {FlatList, ActivityIndicator, Pressable, StyleSheet, View} from 'react-native';
 import axios from 'axios';
-import ArtList from '../components/artList';
-import Header from '../components/header';
+import ArtList from '../components/ArtList';
+import Header from '../components/Header';
 import {useNavigation} from '@react-navigation/native';
-import {RootStackProps} from '../types';
+import {RootStackProps} from '../../types';
 
 const Home: React.FC = () => {
   interface ArtWork {
@@ -44,7 +44,6 @@ const Home: React.FC = () => {
     (navigation as any).navigate('Details', {
       id: item.id.toString(),
     });
-    console.log('navigate to: ', item.title);
   };
 
   useEffect(() => {
@@ -60,6 +59,8 @@ const Home: React.FC = () => {
   return (
     <>
       <Header title={'Home'} isHome />
+      <View style={styles.container}> 
+
       <FlatList
         data={artWorks}
         renderItem={renderItem}
@@ -67,8 +68,14 @@ const Home: React.FC = () => {
         onEndReached={fetchData}
       />
       {loading && <ActivityIndicator size="large" color="#00ff00" />}
+    </View>
     </>
   );
 };
-
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "white"
+  },
+});
 export default Home;
