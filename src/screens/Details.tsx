@@ -53,7 +53,7 @@ const Details: React.FC = () => {
 
   return (
     <>
-      <Header title={'Art'} />
+      <Header title={art.title} />
       <FloatingHeartButton item={art} />
       <ScrollView>
         <View style={styles.container}>
@@ -66,7 +66,6 @@ const Details: React.FC = () => {
             />
           </View>
           <View style={styles.textContainer}>
-            <Text style={styles.title}>{art.title}</Text>
             <Text style={styles.artist}>{art.artist_display}</Text>
             {art.description && (
               <HTML

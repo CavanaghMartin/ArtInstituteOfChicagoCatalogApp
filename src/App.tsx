@@ -9,15 +9,15 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {RootStackParamList} from './types';
-import {Home, Details, Favs} from './src/screens';
-import {store} from './src/store/store';
+import {RootStackParamList} from '../types';
+import {Home, Details, Favs} from './screens';
+import {store} from './store/store';
 import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
 import {persistStore} from 'redux-persist';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {faHeart, faHouse, faBars} from '@fortawesome/free-solid-svg-icons';
+import {faHeart, faBars, faSearch} from '@fortawesome/free-solid-svg-icons';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 const HomeStack = () => (
@@ -57,7 +57,7 @@ function App(): React.JSX.Element {
                 let iconName = faBars;
 
                 if (route.name === 'Home') {
-                  iconName = faHouse;
+                  iconName = faSearch;
                 } else if (route.name === 'Favorites') {
                   iconName = faHeart;
                 }
